@@ -6,5 +6,8 @@ This app is developed using C++ and JavaScript
 
 
 To run project, on terminal use:
-   ```bash
-  make run_server
+
+```bash
+make run_server
+
+2. Open your browser and go to http://localhost:3000 to
