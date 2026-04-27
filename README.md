@@ -1,13 +1,30 @@
 # OpenStreetsMap GPS For UIC Campus
 
-This is a GPS application designed specifically for the UIC Campus to help navigate and find the fastest routes from one part of the campus to another. Users can type the name of the building or the address of where they are trying to go and their current location and find the fastest route to there.
 
-This app is developed using C++ and JavaScript
+This GPS application is designed for the UIC campus to provide the fastest route from point A to point B. Users can input a building name or address along with their current location to get the fastest route across campus.
 
+## How It Works
+- Map data is pulled from the OpenStreetMap API and parsed into a graph structure  
+- Locations (like intersections/buildings) are represented as nodes, and walking paths are treated as edges with weighted distances
+- The shortest path is computed using Dijkstra’s Algorithm with a priority queue (min-heap)  
+- The algorithm explores nodes based on minimum added distance until the desired point is reached 
 
-To run project, on terminal use:
+## Technical Details
+- Implemented graph structures in C++ using adjacency lists
+- Used priority queues to find shortest path computation  
+- Designed modular components for:
+  - Graph construction from map data  
+  - Pathfinding logic  
+  - Input parsing and validation  
 
-```bash
+## Frontend & Backend
+- Backend server built in C++ to handle the overall routing logic  
+- Frontend is built with JavaScript to show the physical route 
+- Communication between frontend and backend is through the local server (localhost:3000)  
+
+To run the application, first download the project files. 
+Navigate to the project folder directory on the terminal and use:
+  ```bash
 make run_server
-
-2. Open your browser and go to http://localhost:3000 to
+```
+Open your browser to http://localhost:3000 and run the application.
